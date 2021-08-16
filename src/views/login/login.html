@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="./style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mongo crud</title>
+  </head>
+  <body>
+    <h2>Sistema de tutoría</h2>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="#" id="formLogin" class="card card-body">
+            <h1>Iniciar sesion Docente</h1>
+            <input
+              type="text"
+              id="codigo"
+              placeholder="Codigo"
+              class="form-control"
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Contraseña"
+              class="form-control"
+            />
+            <a href="#">Olvidaste tu contraseña</a>
+            <button id="btn-login" class="btn btn-primary p-1" type="submit">
+              Sing In
+            </button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="#" id="formLogin" class="card card-body">
+            <h1>Iniciar sesion Administrador</h1>
+            <input
+              type="text"
+              id="Codigo"
+              placeholder="Codigo"
+              class="form-control"
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Contraseña"
+              class="form-control"
+            />
+            <a href="#">Olvidaste tu contraseña</a>
+            <button id="btn-login" class="btn btn-primary p-1" type="submit">
+              Sign In
+            </button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Hola, Administrador</h1>
+                <p>Si eres Administrador ingresa por este medio.</p>
+                <button class="ghost" id="signIn">Ingresar</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Bienvenido de vuelta Docente</h1>
+                <p>Si desea ver sus datos y tutorados ingrese aqui</p>
+                <button class="ghost" id="signUp">Ingresar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./panel.js" charset="utf-8"></script>
+    <script src="../../provider/app.js"></script>
+  </body>
+</html>

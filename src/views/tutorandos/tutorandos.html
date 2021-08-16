@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis tutorandos</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+</head>
+<body>
+    <h1 class="p-2">Mis tutorandos</h1>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 p-2">
+                <form id="formBuscar" class="card card-body">
+                    <p>Buscar por codigo</p>
+                    <div class="form-group p-1">
+                        <input 
+                            type="text"
+                            id="codigoBuscar"
+                            placeholder="Codigo"
+                            class="form-control"
+                            >
+                    </div>
+                    <button id="btn-buscar" class="btn btn-primary p-1" type="submit">
+                        Buscar
+                    </button>
+                    <ul id="alumno-buscado"></ul>
+                </form>
+            </div>
+            <div class="col-md-6 p-2 align-top">
+                <ul id="lista-alumnos"></ul>
+                <script src="../../provider/tutorandos.js""></script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
