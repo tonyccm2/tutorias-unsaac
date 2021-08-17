@@ -5,49 +5,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mongo crud</title>
+
+    <!-- FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+
+
+    <title>Sistema de tutoría</title>
   </head>
   <body>
     <h2>Sistema de tutoría</h2>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="#" id="formLogin" class="card card-body">
+        <form action="#" id="formLoginDocente" class="card card-body">
             <h1>Iniciar sesion Docente</h1>
             <input
               type="text"
-              id="codigo"
+              id="nameDocente"
               placeholder="Codigo"
               class="form-control"
             />
             <input
               type="password"
-              id="password"
+              id="passwordDocente"
               placeholder="Contraseña"
               class="form-control"
             />
             <a href="#">Olvidaste tu contraseña</a>
-            <button id="btn-login" class="btn btn-primary p-1" type="submit">
+            <button id="btn-login-docente" class="btn btn-primary p-1" type="submit">
               Sing In
             </button>
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="#" id="formLogin" class="card card-body">
+        <form action="#" id="formLoginAdmin" class="card card-body">
             <h1>Iniciar sesion Administrador</h1>
             <input
               type="text"
-              id="Codigo"
-              placeholder="Codigo"
+              id="nameAdmin"
+              placeholder="Nombre"
               class="form-control"
             />
             <input
               type="password"
-              id="password"
+              id="passwordAdmin"
               placeholder="Contraseña"
               class="form-control"
             />
             <a href="#">Olvidaste tu contraseña</a>
-            <button id="btn-login" class="btn btn-primary p-1" type="submit">
+            <button id="btn-login-admin" class="btn btn-primary p-1" type="submit">
               Sign In
             </button>
         </form>
@@ -68,6 +79,6 @@
       </div>
     </div>
     <script src="./panel.js" charset="utf-8"></script>
-    <script src="../../provider/app.js"></script>
+    <script src="../../database/login.js"></script>
   </body>
 </html>
