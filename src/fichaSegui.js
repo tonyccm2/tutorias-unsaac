@@ -99,18 +99,18 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           const doc = await getFicha(e.target.dataset.id);
           const ficha = doc.data();
           // recuperamos al form todos los valores
-          taskForm["ficha-tutorando"].value = ficha.tutorando;
-          taskForm["ficha-codigo"].value = ficha.codigo;
-          taskForm["ficha-direccion"].value = ficha.direccion;
-          taskForm["ficha-email"].value = ficha.email;
-          taskForm["ficha-personaReferencia"].value = ficha.personaReferencia;
-          taskForm["ficha-celularReferencia"].value = ficha.celularReferencia;
-          taskForm["ficha-semestre"].value = ficha.semestre;
-          taskForm["ficha-celular"].value = ficha.celular;
-          taskForm["ficha-fecha"].value = ficha.fecha;
-          taskForm["ficha-tipoTutoria"].value = ficha.tipoTutoria;
-          taskForm["ficha-descripcion"].value = ficha.descripcion;
-          taskForm["ficha-referencia"].value = ficha.referencia;
+          fichaForm["ficha-tutorando"].value = ficha.tutorando;
+          fichaForm["ficha-codigo"].value = ficha.codigo;
+          fichaForm["ficha-direccion"].value = ficha.direccion;
+          fichaForm["ficha-email"].value = ficha.email;
+          fichaForm["ficha-personaReferencia"].value = ficha.personaReferencia;
+          fichaForm["ficha-celularReferencia"].value = ficha.celularReferencia;
+          fichaForm["ficha-semestre"].value = ficha.semestre;
+          fichaForm["ficha-celular"].value = ficha.celular;
+          fichaForm["ficha-fecha"].value = ficha.fecha;
+          fichaForm["ficha-tipoTutoria"].value = ficha.tipoTutoria;
+          fichaForm["ficha-descripcion"].value = ficha.descripcion;
+          fichaForm["ficha-referencia"].value = ficha.referencia;
           //mostramos mas???
           editStatus = true;
           id = doc.id;
@@ -128,18 +128,18 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 fichaForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const tutorando = taskForm["ficha-tutorando"];
-  const codigo =   taskForm["ficha-codigo"];
-  const direccion = taskForm["ficha-direccion"];
-  const email = taskForm["ficha-email"];
-  const personaReferencia = taskForm["ficha-personaReferencia"];
-  const celularReferencia = taskForm["ficha-celularReferencia"];
-  const semestre = taskForm["ficha-semestre"];
-  const celular = taskForm["ficha-celular"];
-  const fecha = taskForm["ficha-fecha"];
-  const tipoTutoria = taskForm["ficha-tipoTutoria"];
-  const descripcion = taskForm["ficha-descripcion"];
-  const referencia = taskForm["ficha-referencia"];
+  const tutorando = fichaForm["ficha-tutorando"];
+  const codigo =   fichaForm["ficha-codigo"];
+  const direccion = fichaForm["ficha-direccion"];
+  const email = fichaForm["ficha-email"];
+  const personaReferencia = fichaForm["ficha-personaReferencia"];
+  const celularReferencia = fichaForm["ficha-celularReferencia"];
+  const semestre = fichaForm["ficha-semestre"];
+  const celular = fichaForm["ficha-celular"];
+  const fecha = fichaForm["ficha-fecha"];
+  const tipoTutoria = fichaForm["ficha-tipoTutoria"];
+  const descripcion = fichaForm["ficha-descripcion"];
+  const referencia = fichaForm["ficha-referencia"];
   //intenta hacer la peticion sin lanzar error y cerrar
   try {
     if (!editStatus) {
