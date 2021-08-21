@@ -49,7 +49,7 @@
 4. creamos el package.json
     ```shell
         npm init -y
-        ```
+    ```
 5. Instalamos librerias de electron a utilizar
     ```shell
         npm i electron
