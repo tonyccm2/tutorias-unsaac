@@ -3,6 +3,7 @@
 ## Grupo Electron
 
 #### Integrantes de grupo:✒️
+- **Cana Apu Orlando**
 - **Cconislla Medina Anthony Aldair**
 - **Caceres Quispe Maria Fernanda**
 - **Hinijosa Huarca Brayan Alexander** 
@@ -36,14 +37,14 @@
 - Orienta al alumno en los problemas académicos que surjan durante el proceso formativo (dificultades en el aprendizaje; en las relaciones profesor - alumno; entre alumnos; problemáticas personales, familiares, etc.)
 
 ### Instalacion
-1. instalar Visual studio code [webpack](https://code.visualstudio.com/) 
-2. instalar Nodejs y npm [webpack](https://nodejs.org/es/)
+1. instalar Visual studio code [VisualCode](https://code.visualstudio.com/) 
+2. instalar Nodejs y npm [NodeJs](https://nodejs.org/es/)
 3. instalar Electron por consola o terminal 
     ```shell
     npm install electron --save-dev
     ```
 ### Compilacion
-1. Clonar el repositorio [webpack](https://github.com/tonyccm2/tutorias-unsaac)
+1. Clonar el repositorio [Sistema_Turotia](https://github.com/tonyccm2/tutorias-unsaac)
 2. Abrir la carpeta del repositorio clonado en Visual studio Code
 3. Abrir una terminal 
 4. creamos el package.json
