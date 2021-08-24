@@ -48,6 +48,51 @@ formLoginAdmin.addEventListener('submit', async e => {
             }else{
                 if(document.password === admin.password){
                     console.log("password correcto");
+                    window.location="../docente/docente.html"; 
+                }else{
+                    alert("ERROR: Error en contraseña");
+                }
+            }
+        }else{
+            alert("ERROR: Campo nombre está vacío");
+        }
+        
+    } catch (error) {
+        console.log('Error encontrado: ',error);
+    }
+
+    formLoginAdmin.reset();
+});
+
+
+//login para docentes
+
+formLoginDocente.addEventListener('submit', async e => {
+    e.preventDefault();
+    const docente = {
+        name: formNameDocente.value,
+        password: formPasswordDocente.value,
+    }
+    try {
+        if(docente.name !== ''){
+            const document = {
+                name: '',
+                password: '',
+            }
+            const collectionDocente = await db.collection("docente").get().then((querySnapshot) => {
+                console.log(querySnapshot);
+                querySnapshot.forEach((doc) => {
+                    if(doc.data().codigo === docente.name){
+                        document.name = doc.data().codigo
+                        document.password = doc.data().password
+                    }
+                });
+            });
+            if(document.name === ''){
+                alert("ERROR: No existe docente");
+            }else{
+                if(document.password === docente.password){
+                    console.log("password correcto");
                     window.location="../tutorandos/tutorandos.html"; 
                 }else{
                     alert("ERROR: Error en contraseña");

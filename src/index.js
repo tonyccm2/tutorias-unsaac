@@ -10,7 +10,7 @@ app.on('ready', () => {
             enableRemoteModule: true,
         }
     })
-    win.loadFile('git/src/views/index.html')
+    win.loadFile('git/src/views/login/login.html')
     const mainMenu = Menu.buildFromTemplate(templateMenu);
     Menu.setApplicationMenu(mainMenu);
 });

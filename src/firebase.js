@@ -18,7 +18,7 @@ const tasksContainer = document.getElementById("tasks-container");
 
 let editStatus = false;
 let id = '';
-
+ 
 /**
  * Save a New Task in Firestore
  * @param {string} title the title of the Task
