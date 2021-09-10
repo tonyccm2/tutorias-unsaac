@@ -13,8 +13,8 @@ firebase.initializeApp(firebaseConfig);
     
 const db = firebase.firestore();
 
-const docenteForm = document.getElementById("docente-form");
-const docentesContainer = document.getElementById("docentes-container");
+const formDocente = document.getElementById("formDocente");
+const docentesContainer = document.getElementById("lista-docentes");
 
 let editStatus = false;
 let id = '';
@@ -24,11 +24,11 @@ let id = '';
  * @param {string} title the title of the Task
  * @param {string} description the description of the Task
  */
-const saveDocente = (codigo,contrasenia,nombres,apPaterno,apMaterno,
+const saveDocente = (codigo,password,nombres,apPaterno,apMaterno,
     codigoEP,categoria) =>
-db.collection("Docente").doc().set({
+db.collection("docentes").doc().set({
 codigo
-,contrasenia
+,password
 ,nombres
 ,apPaterno
 ,apMaterno
@@ -37,21 +37,21 @@ codigo
 ,
 });
 //recupera los docentes
-const getDocentes = () => db.collection("Docente").get();
+const getDocentes = () => db.collection("docentes").get();
 
-const onGetDocente = (callback) => db.collection("Docente").onSnapshot(callback);
+const onGetDocente = (callback) => db.collection("docentes").onSnapshot(callback);
 //borrar
-const deleteDocente = (id) => db.collection("Docente").doc(id).delete();
+const deleteDocente = (id) => db.collection("docentes").doc(id).delete();
 //recupera 1 docente por ID
-const getDocente = (id) => db.collection("Docente").doc(id).get();
+const getDocente = (id) => db.collection("docentes").doc(id).get();
 //actualiza
-const updateDocente = (id, updatedDocente) => db.collection('Docente').doc(id).update(updatedDocente);
+const updateDocente = (id, updatedDocente) => db.collection('docentes').doc(id).update(updatedDocente);
 
 //******************************************************************/
 //ventanas y funcionalidades
 
 window.addEventListener("DOMContentLoaded", async (e) => {
-onGetFicha((querySnapshot) => {
+    onGetDocente((querySnapshot) => {
 docentesContainer.innerHTML = "";
 
 querySnapshot.forEach((doc) => {
@@ -91,17 +91,17 @@ try {
 const doc = await getDocente(e.target.dataset.id);
 const docente = doc.data();
 // recuperamos al form todos los valores
-docenteForm["codigo-docente"].value = docente.codigo;
-docenteForm["contrasenia-docente"].value = docente.contrasenia;
-docenteForm["nombres-docente"].value = docente.nombres;
-docenteForm["apPaterno-docente"].value = docente.apPaterno;
-docenteForm["apMaterno-docente"].value = docente.apMaterno;
-docenteForm["codigoEP-docente"].value = docente.codigoEP;
-docenteForm["categoria-docente"].value = docente.categoria;
+formDocente["codigo"].value = docente.codigo;
+formDocente["password"].value = docente.contrasenia;
+formDocente["nombres"].value = docente.nombres;
+formDocente["apellido-paterno"].value = docente.apPaterno;
+formDocente["apellido-materno"].value = docente.apMaterno;
+formDocente["codigo-ep"].value = docente.codigoEP;
+formDocente["categoria"].value = docente.categoria;
 //mostramos mas???
 editStatus = true;
 id = doc.id;
-docenteForm["btn-docente-form"].innerText = "Update";
+formDocente["btn-docente-form"].innerText = "Update";
 //actualiza
 } catch (error) {
 console.log(error);
@@ -112,26 +112,26 @@ console.log(error);
 });
 
 //funcionalidad subir a la nube
-docenteForm.addEventListener("submit", async (e) => {
+formDocente.addEventListener("submit", async (e) => {
 e.preventDefault();
 
-const codigo = docenteForm["docente-codigo"];
-const contrasenia =   docenteForm["docente-contrasenia"];
-const nombres = docenteForm["docente-nombres"];
-const apPaterno = docenteForm["docente-apPaterno"];
-const apMaterno = docenteForm["docente-apMaterno"];
-const codigoEP = docenteForm["docente-codigoEP"];
-const categoria = docenteForm["docente-categoria"];
+const codigo = formDocente["codigo"];
+const password =   formDocente["password"];
+const nombres = formDocente["nombres"];
+const apPaterno = formDocente["apellido-paterno"];
+const apMaterno = formDocente["apellido-materno"];
+const codigoEP = formDocente["codigo-ep"];
+const categoria = formDocente["categoria"];
 //intenta hacer la peticion sin lanzar error y cerrar
 try {
 if (!editStatus) {
-await saveFicha(codigo.value, contrasenia.value, nombres.value, apPaterno.value, apMaterno.value
+await saveDocente(codigo.value, password.value, nombres.value, apPaterno.value, apMaterno.value
 , codigoEP.value, categoria.value,);
 } else {
-await updateFicha(id, {
+await updateDocente(id, {
     codigo: codigo.value, 
-    contrasenia: contrasenia.value, 
-    nombre: nombres.value, 
+    password: password.value, 
+    nombres: nombres.value, 
     apPaterno: apPaterno.value, 
     apMaterno: apMaterno.value, 
     codigoEP: codigoEP.value, 
@@ -140,10 +140,10 @@ await updateFicha(id, {
 //regresa a estar vacio y poder usarla nuevamente
 editStatus = false;
 id = '';
-docenteForm['btn-docente-form'].innerText = 'Save';
+formDocente['btn-docente-form'].innerText = 'Save';
 }
 
-docenteForm.reset();
+formDocente.reset();
 codigo.focus(); // title.focus ??
 } catch (error) {
 console.log(error);

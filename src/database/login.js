@@ -21,7 +21,6 @@ const formLoginDocente      = document.querySelector('#formLoginDocente')
 const formNameDocente       = document.querySelector('#nameDocente')
 const formPasswordDocente   = document.querySelector('#passwordDocente')
 
-
 formLoginAdmin.addEventListener('submit', async e => {
     e.preventDefault();
     const admin = {
@@ -79,7 +78,7 @@ formLoginDocente.addEventListener('submit', async e => {
                 name: '',
                 password: '',
             }
-            const collectionDocente = await db.collection("docente").get().then((querySnapshot) => {
+            const collectionDocente = await db.collection("docentes").get().then((querySnapshot) => {
                 console.log(querySnapshot);
                 querySnapshot.forEach((doc) => {
                     if(doc.data().codigo === docente.name){
