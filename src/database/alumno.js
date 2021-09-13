@@ -120,7 +120,7 @@ const descripcion = AlumnoForm["descripcion"];
 try {
   if (!editStatus) {
       await saveAlumno(codigo.value, nombres.value, apPaterno.value, apMaterno.value, codigoEP.value
-          ,codigoEP.value, codTutor.value,descripcion.value);
+          , codTutor.value,descripcion.value);
   } else {
       await updateAlumno(id, {
           codigo: codigo.value,  
