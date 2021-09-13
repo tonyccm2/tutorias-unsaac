@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 const AlumnoForm = document.getElementById("formAlumno");
-const alumnosContainer = document.getElementById("Lista-alumnos");
+const alumnosContainer = document.getElementById("lista-alumnos");
 
 let editStatus = false;
 let id = '';
@@ -26,7 +26,7 @@ let id = '';
 */
 const saveAlumno = (codigo,nombres,apPaterno,apMaterno,
   codigoEP,codTutor,descripcion) =>
-db.collection("Alumno").doc().set({
+db.collection("alumnos").doc().set({
 codigo
 ,nombres
 ,apPaterno
@@ -36,15 +36,15 @@ codigo
 ,descripcion
 });
 //recupera los Alumno
-const getAlumnos = () => db.collection("Alumno").get();
+const getAlumnos = () => db.collection("alumnos").get();
 
-const onGetAlumno = (callback) => db.collection("Alumno").onSnapshot(callback);
+const onGetAlumno = (callback) => db.collection("alumnos").onSnapshot(callback);
 //borrar
-const deleteAlumno = (id) => db.collection("Alumno").doc(id).delete();
+const deleteAlumno = (id) => db.collection("alumnos").doc(id).delete();
 //recupera 1 Alumno por ID
-const getAlumno = (id) => db.collection("Alumno").doc(id).get();
+const getAlumno = (id) => db.collection("alumnos").doc(id).get();
 //actualiza
-const updateAlumno = (id, updatedAlumno) => db.collection('Alumno').doc(id).update(updatedAlumno);
+const updateAlumno = (id, updatedAlumno) => db.collection('alumnos').doc(id).update(updatedAlumno);
 
 //******************************************************************/
 //ventanas y funcionalidades
@@ -87,13 +87,13 @@ btn.addEventListener("click", async (e) => {
   const doc = await getAlumno(e.target.dataset.id);
   const alumno = doc.data();
   // recuperamos al form todos los valores
-  AlumnoForm["codigo-alumno"].value = alumno.codigo;
-  AlumnoForm["nombres-alumno"].value = alumno.nombres;
-  AlumnoForm["apPaterno-alumno"].value = alumno.apPaterno;
-  AlumnoForm["apMaterno-alumno"].value = alumno.apMaterno;
-  AlumnoForm["codigoEP-alumno"].value = alumno.codigoEP;
-  AlumnoForm["codTutor-alumno"].value = alumno.codTutor;
-  AlumnoForm["descripcion-alumno"].value = alumno.descripcion;
+  AlumnoForm["codigo"].value = alumno.codigo;
+  AlumnoForm["nombres"].value = alumno.nombres;
+  AlumnoForm["apellido-paterno"].value = alumno.apPaterno;
+  AlumnoForm["apellido-materno"].value = alumno.apMaterno;
+  AlumnoForm["codigo-ep"].value = alumno.codigoEP;
+  AlumnoForm["codigo-tutor"].value = alumno.codTutor;
+  AlumnoForm["descripcion"].value = alumno.descripcion;
   //mostramos mas???
   editStatus = true;
   id = doc.id;
@@ -109,13 +109,13 @@ btn.addEventListener("click", async (e) => {
 AlumnoForm.addEventListener("submit", async (e) => {
 e.preventDefault();
 
-const codigo = AlumnoForm["codigo-alumno"];
-const nombres = AlumnoForm["nombres-alumno"];
-const apPaterno = AlumnoForm["apPaterno-alumno"];
-const apMaterno = AlumnoForm["apMaterno-alumno"];
-const codigoEP = AlumnoForm["codigoEP-alumno"];
-const codTutor = AlumnoForm["codTutor-alumno"];
-const descripcion = AlumnoForm["descripcion-alumno"];
+const codigo = AlumnoForm["codigo"];
+const nombres = AlumnoForm["nombres"];
+const apPaterno = AlumnoForm["apellido-paterno"];
+const apMaterno = AlumnoForm["apellido-materno"];
+const codigoEP = AlumnoForm["codigo-ep"];
+const codTutor = AlumnoForm["codigo-tutor"];
+const descripcion = AlumnoForm["descripcion"];
 //intenta hacer la peticion sin lanzar error y cerrar
 try {
   if (!editStatus) {
