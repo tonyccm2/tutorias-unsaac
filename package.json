@@ -1,0 +1,20 @@
+{
+  "name": "tutorias-unsaac",
+  "version": "1.0.0",
+  "description": "- **Cana Apu Orlando**\r - **Cconislla Medina Anthony Aldair**\r - **Caceres Quispe Maria Fernanda**\r - **Hinijosa Huarca Brayan Alexander** \r - **Mamani Quinta Michael Antonni**\r - **Nolazco Suyo Carlos Antoni** \r - **Yupanqui Carrillo Holger Alfredo** \r - **Quispe Ynga Callañaupa Luis Angel**\r - **Vargas Quispe Charly**",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonyccm2/tutorias-unsaac.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonyccm2/tutorias-unsaac/issues"
+  },
+  "homepage": "https://github.com/tonyccm2/tutorias-unsaac#readme"
+}

@@ -1,0 +1,285 @@
+body {
+    margin: 0;
+}
+.container {
+    width: 100%;
+	margin:  0 auto;
+	background: #75e2e9;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	-o-justify-content: center;
+	-ms-justify-content: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	background-image: -moz-linear-gradient( 136deg, rgb(34, 44, 236) 0%, rgb(240, 118, 138) 100%);
+    background-image: -webkit-linear-gradient( 136deg, rgb(235, 133, 138) 0%, rgb(134, 141, 231) 100%);
+    background-image: -ms-linear-gradient( 136deg, rgb(47, 106, 235) 0%, rgb(206, 110, 134) 100%);
+}
+.form-container{
+    background: #fff;
+	width: 1100px;
+	height: 600px;
+	border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-o-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	margin: 95px 0;
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+}
+.form-container .form-details{
+    position: relative;
+    width: 100%;
+	height: 100%;
+    display: flex;
+    display: -webkit-flex;
+}
+.form-container .form-details h2{
+    font-weight: 500;
+	font-size: 25px;
+	margin-bottom: 34px;
+	padding: 33px 50px 0px 60px;
+}
+.form-container .form-details .form-left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%;
+	background: rgb(184, 181, 181);
+}
+.form-container .form-details .form-left h2{
+    color: rgb(14, 14, 14);
+}
+.form-container .form-details .form-right {
+	width: 100%;
+	background: rgb(108, 95, 228);
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.form-container .form-details .form-right h2{
+	color: #fff;
+}
+.form-container .form-details .form-group {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction:  column;
+	-o-flex-direction:  column;
+	-ms-flex-direction:  column;
+	-moz-flex-direction:  column;
+	-webkit-flex-direction:  column;
+}
+.form-container.form-details .form-row {
+	position: relative;
+	margin-bottom: 24px;
+	padding-left: 60px;
+	padding-right: 50px;
+}
+.form-container .form-details .form-left .form-group .form-row.form-row-1 {
+	display: flex;
+	display: -webkit-flex;
+	width: auto;
+	padding: 10px 12px 0 60px;
+}
+
+.form-container .form-details .form-left .form-group .form-row.form-row-2 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}.form-container .form-details .form-left .form-group .form-row.form-row-3 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}.form-container .form-details .form-left .form-group .form-row.form-row-4 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}.form-container .form-details .form-left .form-group .form-row.form-row-5 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}.form-container .form-details .form-left .form-group .form-row.form-row-6 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}.form-container .form-details .form-left .form-group .form-row.form-row-7 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}.form-container .form-details .form-right .form-group .form-row.form-row-1 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}
+.form-container .form-details .form-right .form-group .form-row.form-row-2 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}
+.form-container .form-details .form-right .form-group .form-row.form-row-3 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}
+.form-container .form-details .form-right .form-group .form-row.form-row-4 {
+	width: auto;
+	padding: 10px 12px 0 60px;
+}
+.form-container .form-details select, .form-container .form-details input, .form-container .form-details textarea {
+	width: 100%;
+    padding: 11.5px 15px 15px 15px;
+    border: 1px solid transparent;
+    background: transparent;
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+	position: relative;
+}
+.form-container .form-details .form-left .form-row.form-row-1 input {
+	width: 60%;
+}
+.form-container .form-details .form-row {
+	width: auto;
+	padding: 0 60px;
+}
+.form-container .form-details .form-left select {
+	background: 0 0;
+	position: relative;
+	z-index: 9;
+	cursor: pointer;
+}
+.form-container .form-details .form-left select{
+	color: rgb(0, 0, 0);	
+	border-bottom: 2px solid rgb(255, 255, 255);
+	border-bottom-right-radius: 2%;
+}
+.form-container .form-details .select-btn {
+	z-index: 0;
+    position: absolute;
+    top: 30%;
+    right: 11.5%;
+    font-size: 18px;
+}
+.form-container .form-details .form-right input {
+	color: #f2f2f2;
+	border-bottom:2px solid rgb(0, 0, 0);
+}
+.form-container .form-details .form-right textarea {
+	background: 0 0;
+	position: relative;
+	z-index: 9;
+	color: rgb(255, 255, 255);
+	border:2px solid rgb(255, 255, 255);
+	height: 00%;	
+}
+.form-container .form-details .form-left .mybutton {
+	position: relative;
+	overflow: hidden;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+	font-style: italic;
+	font-size: 1.15rem;
+	color: rgb(255, 255, 255);
+}
+.mybutton span {
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+.mybutton > span {
+	overflow: hidden;
+	mix-blend-mode: difference;
+}
+.mybutton:hover > span > span {
+	animation: MoveInit 0.1s forwards, MoveEnd 0.3s forwards 0.2s;
+}
+@keyframes MoveInit {
+	to {
+		transform: translate3d(105%,0,0);
+	}
+}
+@keyframes MoveEnd {
+	from {
+		transform: translate3d(-100%,0,0);
+	}
+	to {
+		transform: translate3d(0,0,0);
+	}
+}
+.mybutton::before, .mybutton::after {
+	content: '';
+	background: rgb(0, 0, 0);
+}
+.mybutton::before {
+	width: 135%;
+	-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
+	clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
+	transform: translate3d(-100%,0,0);
+}
+.mybutton:hover::before {
+	transform: translate3d(0,0,0);
+	transition: transform 0.3s cubic-bezier(0.7,0,0.2,1); 
+}
+.mybutton:hover::after {
+	width: 105%;
+	transform: translate3d(100%,0,0);
+	transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.mybutton:hover::after {
+	transform: translate3d(0,0,0);
+	transition: transform 0.01s 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.form-container .form-details .form-left input {
+	color: rgb(0, 0, 0);
+	border-bottom: 2px solid rgb(255, 255, 255);
+}
+.form-container .form-details .form-right input::-webkit-input-placeholder {
+	color: #f2f2f2;
+	font-size: 16px; 
+}
+.form-container .form-details .form-right input::-moz-placeholder {
+	color: #f2f2f2;
+	font-size: 16px;
+}
+.form-container .form-details .form-right textarea::-moz-placeholder {
+	color: #f2f2f2;
+	font-size: 16px;
+}
+.form-container .form-details .form-right textarea::-webkit-input-placeholder {
+	color: #ffffff;
+	font-size: 16px; 
+}
+.form-container .form-details .form-left input::-webkit-input-placeholder {
+	color: #000000;
+	font-size: 16px; 
+}
+
+@media screen and (max-width: 1199px) {
+	.form-container {
+		margin:  95px 20px;
+	}
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	.form-container .form-details .form-group {
+		flex-direction:  column;
+		-o-flex-direction:  column;
+		-ms-flex-direction:  column;
+		-moz-flex-direction:  column;
+		-webkit-flex-direction:  column;
+	}
+}

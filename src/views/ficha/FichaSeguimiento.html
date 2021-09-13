@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Registrar Ficha de tutoria</title>
+  </head>
+  <body class="form-FS">
+    <div class="container">
+      <div class="form-container">
+        <form class="form-details" id="my-form">
+          <div class="form-left">
+            <h2>Datos del Estudiante</h2>
+            <div class="form-row">
+              <select name="tutoring">
+                <option value="st-tutoring" class="option">1ra Tutoria</option>
+                <option value="nd-tutoring" class="option">2da Tutoria</option>
+                <option value="rd-tutoring" class="option">3ra Tutoria</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <div class="form-row form-row-1">
+                <input
+                  type="text"
+                  name="cod"
+                  id="cod"
+                  class="input-text"
+                  placeholder="Codigo"
+                  required
+                />
+                <button class="mybutton"><span><span>Buscar</span></span></button>
+              </div>
+              <div class="form-row form-row-2">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="input-text"
+                  placeholder="Nombres"
+                  required
+                />
+              </div>
+              <div class="form-row form-row-3">
+                <input
+                  type="text"
+                  name="nd-name"
+                  id="nd-name"
+                  class="input-text"
+                  placeholder="Apellidos Paternos"
+                  required
+                />
+              </div>
+              <div class="form-row form-row-4">
+                <input
+                  type="text"
+                  name="st-name"
+                  id="st-name"
+                  class="input-text"
+                  placeholder="Apellidos Maternos"
+                  required
+                />
+              </div>
+              <div class="form-row form-row-5">
+                <input
+                  type="text"
+                  name="cod-school"
+                  id="cod-school"
+                  class="input-text"
+                  placeholder="Codigo Esc. Pro."
+                  required
+                />
+              </div>
+              <div class="form-row form-row-6">
+                <input
+                  type="text"
+                  name="cod-tutor"
+                  id="cod-tutor"
+                  class="input-text"
+                  placeholder="Codigo Tutor"
+                  required
+                />
+              </div>
+              <div class="form-row form-row-7">
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  class="input-text"
+                  placeholder="Descripcion"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-right">
+            <h2>Detalles de Tutoria</h2>
+            <div class="form-group">
+              <div class="form-row form-row-1">
+                <input
+                  type="text"
+                  name="type-tutoring"
+                  class="input-text"
+                  placeholder="Tipo Tutoria"
+                  required
+                />
+              </div>
+              <div class="form-row form-row-2">
+                <input
+                  type="text"
+                  name="phone"
+                  class="input-text"
+                  placeholder="Nro Celular"
+                  required
+                />
+              </div>
+              <div class="form-row form-row-3">
+                <textarea
+                  type="text"
+                  name="details"
+                  class="text-area"
+                  placeholder="Detalles"
+                  rows="7"
+                ></textarea>
+              </div>
+              <div class="form-row form-row-4">
+                <textarea
+                  type="text"
+                  name="requirements"
+                  class="text-area"
+                  placeholder="Requerimentos"
+                  rows="7"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
