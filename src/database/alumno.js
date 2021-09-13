@@ -124,7 +124,7 @@ try {
   } else {
       await updateAlumno(id, {
           codigo: codigo.value,  
-          nombre: nombres.value, 
+          nombres: nombres.value, 
           apPaterno: apPaterno.value, 
           apMaterno: apMaterno.value, 
           codigoEP: codigoEP.value, 
