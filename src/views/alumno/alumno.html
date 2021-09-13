@@ -2,49 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Alumno</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    
+    <!-- FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
- 
-  <link rel="stylesheet" href="main.css">
- 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+
   <title>Alumno</title>
 </head>
 <body>
-  <div class="container">
-    <div class="alumno-container">
-      <div class="buscar">
-        <h1>DATOS ALUMNO</h1>
-        <form action="">
-          <div class="perfil">
-            <img class="imgs" src="https://image.flaticon.com/icons/png/512/560/560216.png">
-          </div>
-          <div class="login-items">
-            <input type="text" placeholder="&#8981; Ingrese codigo a buscar" class="codigob" required autofocus>
-            <div class="btn__form">
-              <input class="btn__search" type="button" value="BUSCAR">
+  <h1 class="p-2">Registrar Alumno</h1>
+    <main class="container-fluid">
+      <div class="row">
+          <div class="col-md-6 p-2 my-auto align-top">
+              <form id="formAlumno" class="card card-body">
+                  <p>Alumno</p>
+                  <p>Codigo</p>
+                  <div class="form-group p-1">
+                      <input 
+                          type="number"
+                          id="codigo"
+                          placeholder="Codigo"
+                          class="form-control"
+                          autofocus
+                          >
+                  </div>
+                  <p>Nombres</p>
+                  <div class="form-group p-1">
+                      <input 
+                          type="text"
+                          id="nombres"
+                          placeholder="Nombres"
+                          class="form-control"
+                          >
+                  </div>
+                  <p>Apellido Paterno</p>
+                  <div class="form-group p-1">
+                      <input 
+                          type="text"
+                          id="apellido-paterno"
+                          placeholder="Apellido Paterno"
+                          class="form-control"
+                          >
+                  </div>
+                  <p>Apellido Materno</p>
+                  <div class="form-group p-1">
+                      <input 
+                          type="text"
+                          id="apellido-materno"
+                          placeholder="Apellido Materno"
+                          class="form-control"
+                          >
+                  </div>
+                  <p>Codigo escuela profesional</p>
+                  <div class="form-group p-1">
+                      <input 
+                          type="text"
+                          id="codigo-ep"
+                          placeholder="Codigo EP"
+                          class="form-control"
+                          >
+                  </div>
+                  <p>Codigo tutor</p>
+                  <div class="form-group p-1">
+                      <input 
+                          type="text"
+                          id="codigo-tutor"
+                          placeholder="Codigo Tutor"
+                          class="form-control"
+                          >
+                  </div>
+                  <p>Descripción</p>
+                  <div class="form-group p-1">
+                      <input 
+                          type="text"
+                          rows="3"
+                          id="descripcion"
+                          placeholder="Descripción"
+                          class="form-control"
+                          >
+                  </div>
+                  <button id="btn-guardar" class="btn btn-primary p-1" type="submit">
+                      Guardar
+                  </button>
+              </form>
+              <div class="col-md-6 p-2">
+                <form id="formBuscar" class="card card-body">
+                    <p>Buscar por codigo</p>
+                    <div class="form-group p-1">
+                        <input 
+                            type="text"
+                            id="codigoBuscar"
+                            placeholder="Codigo"
+                            class="form-control"
+                            >
+                    </div>
+                    <button id="btn-buscar" class="btn btn-primary p-1" type="submit">
+                        Buscar
+                    </button>
+                    <ul id="alumno-buscado"></ul>
+                </form>
             </div>
-          </div>
-        </form>
-      </div>
-      <div class="register">
-        <h2>Formulario <span>Registro Alumno</span></h2>
-        <form action="">
-          <input type="text" placeholder="&#128274;  Codigo" class="codigo" required autofocus>
-          <input type="text" placeholder="&#128100;  Nombres"  class="nombres" required autofocus>
-          <input type="text" placeholder="&#128100;  Apellido Paterno"  class="apellido paterno" required autofocus>
-          <input type="text" placeholder="&#128100;  Apellido Materno" class="apellido materno" required autofocus>
-          <input type="text" placeholder="&#128274;  Codigo Escuela Profesional" class="codigo escuela profesional" required autofocus>
-          <input type="text" placeholder="&#128274;  Codigo Tutor" class="codigo tutor" required autofocus>
-          <input type="text" placeholder="&#8962;  Descripcion"  class="descripcion" required autofocus>
-          <div class="btn__form">
-              <input class="btn__submit" type="submit" value="GUARDAR">
-              <input class="btn__edit" type="button" value="EDITAR">	
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+            <div class="col-md-5 p-2 align-top">
+                <ul id="lista-alumnos"></ul>
+            </div>
+        </div>
+    </main>
+                      
+    <script src="../../database/alumno.js"></script>
 </body>
 </html>

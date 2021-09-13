@@ -47,7 +47,7 @@ formLoginAdmin.addEventListener('submit', async e => {
             }else{
                 if(document.password === admin.password){
                     console.log("password correcto");
-                    window.location="../docente/docente.html"; 
+                    window.location="../admin/admin.html"; 
                 }else{
                     alert("ERROR: Error en contraseña");
                 }
