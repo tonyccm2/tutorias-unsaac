@@ -14,6 +14,12 @@ var firebaseConfig = {
     
   const db = firebase.firestore();
   
+
+  var url_string = window.location.href; //
+  var url = new URL(url_string);
+  var c = url.searchParams.get("filtro");
+  document.getElementById("aqui").value = c;
+
   const tutorandoForm = document.getElementById("Tutorando-form");
   const TutorandoSContainer = document.getElementById("Tutorando-container");
   
