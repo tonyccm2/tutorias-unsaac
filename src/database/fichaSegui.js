@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
   
 const db = firebase.firestore();
 
-const fichaForm = document.getElementById("fichaSegui-form");
+const fichaForm = document.getElementById("my-form");//fichaSegui-form
 const fichasContainer = document.getElementById("fichaSegui-container");
 
 let editStatus = false; // ????
@@ -28,21 +28,15 @@ let id = '';
 */
 
 //guardar
-const saveFicha = (tutorando,codigo,direccion,email,personaReferencia,celularReferencia
-  ,semestre,celular,fecha,tipoTutoria,descripcion,referencia) =>
-db.collection("fichaSegui").doc().set({
-  tutorando
-  ,codigo
-  ,direccion
-  ,email
-  ,personaReferencia
-  ,celularReferencia
-  ,semestre
-  ,celular
-  ,fecha
-  ,tipoTutoria
-  ,descripcion
-  ,referencia
+const saveFicha = (cod,name,nd_name,st_name,cod_school,cod_tutor,description) =>
+db.collection("fichaSegui").doc().set({// actualizado con "Ficha Seguimiento.html 
+  cod
+  ,name
+  ,nd_name
+  ,st_name
+  ,cod_school
+  ,cod_tutor
+  ,description
 });
 //recupera las fichas
 const getFichas = () => db.collection("fichaSegui").get();
@@ -64,10 +58,10 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
     querySnapshot.forEach((doc) => {
       const ficha = doc.data();
-      // FRONT-END ?????????????
+      // FRONT-END ?????????????  // actualizado cod y description de .html
       fichasContainer.innerHTML += `<div class="card card-body mt-2 border-primary">
-    <h3 class="h5">${ficha.codigo}</h3>
-    <p>${ficha.descripcion}</p>
+    <h3 class="h5">${ficha.cod}</h3>
+    <p>${ficha.description}</p>
     <div>
       <button class="btn btn-primary btn-delete" data-id="${doc.id}">
         🗑 Delete
@@ -98,19 +92,16 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         try {
           const doc = await getFicha(e.target.dataset.id);
           const ficha = doc.data();
+          //_____ Nos basamos en "Ficha Seguimiento.html"_______
           // recuperamos al form todos los valores
-          fichaForm["ficha-tutorando"].value = ficha.tutorando;
-          fichaForm["ficha-codigo"].value = ficha.codigo;
-          fichaForm["ficha-direccion"].value = ficha.direccion;
-          fichaForm["ficha-email"].value = ficha.email;
-          fichaForm["ficha-personaReferencia"].value = ficha.personaReferencia;
-          fichaForm["ficha-celularReferencia"].value = ficha.celularReferencia;
-          fichaForm["ficha-semestre"].value = ficha.semestre;
-          fichaForm["ficha-celular"].value = ficha.celular;
-          fichaForm["ficha-fecha"].value = ficha.fecha;
-          fichaForm["ficha-tipoTutoria"].value = ficha.tipoTutoria;
-          fichaForm["ficha-descripcion"].value = ficha.descripcion;
-          fichaForm["ficha-referencia"].value = ficha.referencia;
+          //                    
+          fichaForm["cod"].value = ficha.cod;
+          fichaForm["name"].value = ficha.name;
+          fichaForm["nd_name"].value = ficha.nd_name;
+          fichaForm["st_name"].value = ficha.st_name;
+          fichaForm["cod_school"].value = ficha.cod_school;
+          fichaForm["cod_tutor"].value = ficha.cod_tutor;
+          fichaForm["description"].value = ficha.description;
           //mostramos mas???
           editStatus = true;
           id = doc.id;
@@ -128,38 +119,27 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 fichaForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const tutorando = fichaForm["ficha-tutorando"];
-  const codigo =   fichaForm["ficha-codigo"];
-  const direccion = fichaForm["ficha-direccion"];
-  const email = fichaForm["ficha-email"];
-  const personaReferencia = fichaForm["ficha-personaReferencia"];
-  const celularReferencia = fichaForm["ficha-celularReferencia"];
-  const semestre = fichaForm["ficha-semestre"];
-  const celular = fichaForm["ficha-celular"];
-  const fecha = fichaForm["ficha-fecha"];
-  const tipoTutoria = fichaForm["ficha-tipoTutoria"];
-  const descripcion = fichaForm["ficha-descripcion"];
-  const referencia = fichaForm["ficha-referencia"];
+  const cod = fichaForm["cod"];
+  const name =   fichaForm["name"];
+  const nd_name = fichaForm["nd_name"];
+  const st_name = fichaForm["st_name"];
+  const cod_school = fichaForm["cod_school"];
+  const cod_tutor = fichaForm["cod_tutor"];
+  const description = fichaForm["description"];
   //intenta hacer la peticion sin lanzar error y cerrar
   try {
     if (!editStatus) {
-      await saveFicha(tutorando.value, codigo.value, direccion.value, email.value, personaReferencia.value
-          , celularReferencia.value, semestre.value, celular.value, fecha.value
-          ,tipoTutoria.value, descricion.value, referencia.value,);
+      await saveFicha(cod.value, name.value, nd_name.value, st_name.value, cod_school.value
+          , cod_tutor.value, description.value,);
     } else {
-      await updateFicha(id, {
-        tutorando: tutorando.value,
-        codigo: codigo.value,
-        direccion: direccion.value,
-        email: email.value,
-        personaReferencia: personaReferencia.value,
-        celularReferencia: celularReferencia.value,
-        semestre: semestre.value,
-        celular: celular.value,
-        fecha: fecha.value,
-        tipoTutoria: tipoTutoria.value,
-        descripcion: descripcion.value,
-        referencia: referencia.value,
+      await updateFicha(id, {// actualizado con los ID de "Ficha Seguimiento.html"
+        cod: cod.value,
+        name: name.value,
+        nd_name: nd_name.value,
+        st_name: st_name.value,
+        cod_school: cod_school.value,
+        cod_tutor: cod_tutor.value,
+        description: description.value,
       })
       //regresa a estar vacio y poder usarla nuevamente
       editStatus = false;
