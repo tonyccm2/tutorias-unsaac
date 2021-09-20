@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis tutorandos</title>
     <link rel="stylesheet" href="../bootstrap.min.css">
+    <!-- FONT AWESO-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--FONT OSWALD-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <!-- CUSTOM CSS-->
+    <link rel="stylesheet" href="tutorandos_styles.css">
 </head>
 <body>
-    <h1 class="p-2">Mis tutorandos</h1>
-    <main class="container-fluid">
+    <main class="container">
+        <h1>Mis tutorandos</h1>
         <div class="row">
             <div class="col-md-6 p-2">
                 <form id="formBuscar" class="card card-body">
@@ -22,15 +29,28 @@
                             class="form-control"
                             >
                     </div>
-                    <button id="btn-buscar" class="btn btn-primary p-1" type="submit">
+                    <button id="btn-buscar" class="btn_buscar" type="submit">
                         Buscar
                     </button>
-                    <ul id="alumno-buscado"></ul>
+                    <ul id="alumno-buscado"></ul>                    
                 </form>
             </div>
-            <div class="col-md-6 p-2 align-top">
-                <ul id="lista-alumnos"></ul>
-                <script src="../../provider/tutorandos.js""></script>
+            <div class="card-body">
+                <h5 class="titulo"> LISTADO DE ALUMNOS</h5>
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let tarjeta of listTarjetas">
+                            <td>{{Alumno.Codigo}}</td>
+                            <td>{{Alumno.Nombres}}</td>
+                            <td>{{Alumno.apellidoPaterno}}</td>
+                            <td>{{Alumno.apellidoMaterno}}</td>
+                            <td>{{Alumno.codigoEP}}</td>
+                            <td>
+                                <i (click)="editarAlumno(Alumno)" class="far fa-edit text-info"></i>
+                            </td>
+                        </tr>                                                      
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
