@@ -13,6 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
     <!-- CUSTOM CSS-->
     <link rel="stylesheet" href="tutorandos_styles.css">
+    
+    <!-- FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+
 </head>
 <body>
     <main class="container">
@@ -38,21 +48,11 @@
             <div class="card-body">
                 <h5 class="titulo"> LISTADO DE ALUMNOS</h5>
                 <table class="table">
-                    <tbody>
-                        <tr *ngFor="let tarjeta of listTarjetas">
-                            <td>{{Alumno.Codigo}}</td>
-                            <td>{{Alumno.Nombres}}</td>
-                            <td>{{Alumno.apellidoPaterno}}</td>
-                            <td>{{Alumno.apellidoMaterno}}</td>
-                            <td>{{Alumno.codigoEP}}</td>
-                            <td>
-                                <i (click)="editarAlumno(Alumno)" class="far fa-edit text-info"></i>
-                            </td>
-                        </tr>                                                      
-                    </tbody>
+                    <div id="tabla-alumnos"></div>
                 </table>
             </div>
         </div>
     </main>
+    <script src="../../database/tutorando.js"></script>
 </body>
 </html>
