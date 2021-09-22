@@ -26,3 +26,13 @@ label{
 .nav-tabs{
 	border-bottom:0px;
 }
+
+.container .main-section .tab-content .tab-pane .card .card-body .table-responsive #titles{
+    height: 70%;
+    width: 67%;
+    border-color: rgb(0, 0,0);
+}
+.container .main-section .tab-content .tab-pane .card .card-header h4{
+    display: inline;
+    padding-right: 40%;
+}
