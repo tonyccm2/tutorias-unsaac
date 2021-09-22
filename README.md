@@ -17,7 +17,7 @@
 - **Caceres Quispe Maria Fernanda**
 - **Hinojosa Huarca Brayan Alexandert** 
 - **Mamani Quinta Michael Antonni**
-- **Nolazco Suyo Carlos Antoni** 
+- **Nolasco Suyo Carlos Antoni** 
 - **Yupanqui Carrillo Holger Alfredo** 
 - **Quispe Ynga Callañaupa Luis Angel**
 - **Vargas Quispe Charly**
