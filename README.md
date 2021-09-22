@@ -15,7 +15,7 @@
 - **Cana Apu Orlando**
 - **Cconislla Medina Anthony Aldair**
 - **Caceres Quispe Maria Fernanda**
-- **Hinijosa Huarca Brayan Alexander** 
+- **Hinojosa Huarca Brayan Alexandert** 
 - **Mamani Quinta Michael Antonni**
 - **Nolazco Suyo Carlos Antoni** 
 - **Yupanqui Carrillo Holger Alfredo** 
