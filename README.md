@@ -33,20 +33,20 @@
 - Promueve en el estudiante el mejoramiento de su desempeño académico.
 - Estimula su capacidad de aprender a aprender.
 - Fomenta su capacidad crítica y creadora.
-- Orienta al alumno en los problemas académicos que surjan durante el proceso formativo (dificultades en el aprendizaje; en las relaciones profesor - alumno; entre alumnos; problemáticas personales, familiares, etc.)
+- Orienta al alumno en los problemas académicos que surjan durante el proceso formativo (dificultades en el aprendizaje; en las relaciones profesor - alumno; entre alumnos; problemáticas personales, familiares, etc.).
 
-#### Instalacion
+### Instalacion
 1. instalar Visual studio code [VisualCode](https://code.visualstudio.com/) 
 2. instalar Nodejs y npm [NodeJs](https://nodejs.org/es/)
-3. instalar Electron por consola o terminal 
+3. instalar Electron por consola o terminal .
     ```shell
     npm install electron --save-dev
     ```
-#### Compilacion
+### Compilacion
 1. Clonar el repositorio [Sistema_Turotia](https://github.com/tonyccm2/tutorias-unsaac)
-2. Abrir la carpeta del repositorio clonado en Visual studio Code
-3. Abrir una terminal 
-4. creamos el package.json
+2. Abrir la carpeta del repositorio clonado en Visual studio Code.
+3. Abrir una terminal.
+4. creamos el package.json.
     ```shell
         npm init -y
     ```
