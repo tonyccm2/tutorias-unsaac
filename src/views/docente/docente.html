@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Docente</title>
-    <link rel="stylesheet" href="../bootstrap.min.css">
-    
+	<title>User Information and Form</title>
+	
+	<!--JQUERY-->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script 
+		src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script 
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	
+	<!-- Los iconos tipo Solid de Fontawesome-->
+	<link rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+	<!-- Nuestro css-->
+	<link rel="stylesheet" type="text/css" href="src/views/docente.css"
+		th:href="@{/views/docente.cs}">
+
     <!-- FIREBASE -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
@@ -15,113 +34,172 @@
     https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 
-
+	<script type="text/javascript">
+	    $(document).ready(function() {
+	        //Asegurate que el id que le diste a la tabla sea igual al texto despues del simbolo #
+	        $('#userList').DataTable();
+	    } );
+	</script>
 </head>
 <body>
-    <h1 class="p-2">Registrar Docente</h1>
-    <main class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 p-2 my-auto align-top">
-                <form id="formDocente" class="card card-body">
-                    <p>Docente</p>
-                    <p>Codigo</p>
-                    <div class="form-group p-1">
-                        <input 
-                            type="number"
-                            id="codigo"
-                            placeholder="Codigo"
-                            class="form-control"
-                            autofocus
-                            >
-                    </div>
-                    <p>Contraseña</p>
-                    <div class="form-group p-1">
-                        <input 
-                            type="password"
-                            id="password"
-                            placeholder="Contraseña"
-                            class="form-control"
-                            >
-                    </div>
-                    <p>Nombres</p>
-                    <div class="form-group p-1">
-                        <input 
-                            type="text"
-                            id="nombres"
-                            placeholder="Nombres"
-                            class="form-control"
-                            >
-                    </div>
-                    <p>Apellido Paterno</p>
-                    <div class="form-group p-1">
-                        <input 
-                            type="text"
-                            id="apellido-paterno"
-                            placeholder="Apellido Paterno"
-                            class="form-control"
-                            >
-                    </div>
-                    <p>Apellido Materno</p>
-                    <div class="form-group p-1">
-                        <input 
-                            type="text"
-                            id="apellido-materno"
-                            placeholder="Apellido Materno"
-                            class="form-control"
-                            >
-                    </div>
-                    <p>Codigo escuela profesional</p>
-                    <div class="form-group p-1">
-                        <input 
-                            type="text"
-                            id="codigo-ep"
-                            placeholder="Codigo EP"
-                            class="form-control"
-                            >
-                    </div>
-                    <p>Categoría</p>
-                    <div class="form-group p-1">
-                        <input type="text"
-                            name="categoria"
-                            class="form-control"
-                            list="categoria"
-                            placeholder="Categoría"
-                            multiple>
-                        <datalist id="categoria">
-                            <option value="Nombrado">
-                            <option value="Contratado">
-                        </datalist>
-                    </div>
-                    <button id="btn-guardar" class="btn btn-primary p-1" type="submit">
-                        Guardar
-                    </button>
-                </form>
-            </div>
-            
-            <div class="col-md-6 p-2">
-                <form id="formBuscar" class="card card-body">
-                    <p>Buscar por codigo</p>
-                    <div class="form-group p-1">
-                        <input 
-                            type="text"
-                            id="codigoBuscar"
-                            placeholder="Codigo"
-                            class="form-control"
-                            >
-                    </div>
-                    <button id="btn-buscar" class="btn btn-primary p-1" type="submit">
-                        Buscar
-                    </button>
-                    <ul id="docente-buscado"></ul>
-                </form>
-            </div>
-            <div class="col-md-5 p-2 align-top">
-                <ul id="lista-docentes"></ul>
-            </div>
-        </div>
-    </main>
+	<div class="container">
+	<div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
+		<ul class="nav nav-tabs justify-content-end">
+			<li class="nav-item">
+			<a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>				   	
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+				<div class="card">
+					<div class="card-header">
+						<h4>CRUD Docentes</h4>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="lista-docentes" class="table table-bordered table-hover table-striped">
+								<thead class="thead-light">
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">First</th>
+									<th scope="col">Last</th>
+									<th scope="col">Username</th>
+									<th scope="col">E-mail</th>
+                                    <th scope="col">First</th>
+									<th></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Cristian</td>
+									<td>Ruiz</td>
+									<td>c.r.username</td>
+									<td>c.r.username@blog.com</td>
+									<td>
+										<a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+				<div class="card">
+					<div class="card-header">
+						<h4>Registrar Docente</h4>
+					</div>
+					<div class="card-body">
+						<form id="formDocente" class="form" role="form" autocomplete="off">
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Codigo</label>
+								<div class="col-lg-9">
+									<input 
+                                        type="number"
+                                        id="codigo"
+                                        placeholder="Codigo"
+                                        class="form-control"
+                                        autofocus
+                                        >
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+								<div class="col-lg-9">
+									<input 
+                                        type="password"
+                                        id="password"
+                                        placeholder="Contraseña"
+                                        class="form-control"
+                                        >
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Nombres</label>
+								<div class="col-lg-9">
+									<input 
+                                        type="text"
+                                        id="nombres"
+                                        placeholder="Nombres"
+                                        class="form-control"
+                                        >
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Apellido Paterno</label>
+								<div class="col-lg-9">
+									<input 
+                                        type="text"
+                                        id="apellido-paterno"
+                                        placeholder="Apellido Paterno"
+                                        class="form-control"
+                                        >
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Apellido Materno</label>
+								<div class="col-lg-9">
+									<input 
+                                        type="text"
+                                        id="apellido-materno"
+                                        placeholder="Apellido Materno"
+                                        class="form-control"
+                                        >
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Escuela Profesional</label>
+								<div class="col-lg-9">
+									<input 
+                                        type="text"
+                                        id="codigo-ep"
+                                        placeholder="Codigo EP"
+                                        class="form-control"
+                                        >
+								</div>
+							</div>
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Categoria</label>
+								<div class="col-lg-9">
+									<input type="text"
+                                        name="categoria"
+                                        class="form-control"
+                                        list="categoria"
+                                        placeholder="Categoría"
+                                        multiple>
+                                    <datalist id="categoria">
+                                        <option value="Nombrado">
+                                        <option value="Contratado">
+                                    </datalist>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<div class="col-lg-1 text left"></div>
+									<button id="btn-guardar" class="btn btn-primary p-1" type="submit">
+                                        Guardar
+                                    </button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
     <script src="../../database/docente.js"></script>
+</div>
 </body>
 </html>
