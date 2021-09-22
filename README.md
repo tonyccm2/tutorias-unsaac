@@ -58,7 +58,9 @@
     ```shell
         npm start
     ```
+### Login Administrador y Tutor
+- para Administrador
+    usuario:admin contraseña:admin
+- para Tutor
+    usuario:0003 contraseña:0003
 
-### Modo Web
-1. abrir archivo login.html para iniciar el programa web 
-    en la direción ..\src\views\login\login.html
