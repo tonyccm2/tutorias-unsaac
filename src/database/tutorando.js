@@ -41,7 +41,7 @@ var firebaseConfig = {
       querySnapshot.forEach((doc) => {
         const tutorando = doc.data();
         // FRONT-END ?????????????
-        if (tutorando.codTutor == "0001")
+        if (tutorando.codTutor == "0003")
         {
           TutorandoContainer.innerHTML += `<tbody>
                 <li><tr *ngFor="let tarjeta of listTarjetas" class="card card-body mt-2 border-primary">
