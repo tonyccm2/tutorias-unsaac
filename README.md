@@ -59,4 +59,6 @@
         npm start
     ```
 
-
+### Modo Web
+1. abrir archivo login.html para iniciar el programa web 
+    en la direción ..\src\views\login\login.html
