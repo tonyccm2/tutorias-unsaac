@@ -55,18 +55,25 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       querySnapshot.forEach((doc) => {
       const alumno = doc.data();
       // FRONT-END ?????????????
-      alumnosContainer.innerHTML += `<div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${alumno.codigo}</h3>
-      <p>${alumno.nombres}</p>
-      <div>
-          <button class="btn btn-primary btn-delete" data-id="${doc.id}">
-              🗑 Delete
-          </button>
-          <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
-              🖉 Edit
-          </button>
-      </div>
-  </div>`;
+      alumnosContainer.innerHTML += `<table class = "table-striped table-bordered table-hover" id="tablaarticulos">
+      <thead>          
+        <tr>
+          <td>${alumno.codigo}</td>
+          <td>${alumno.nombres}</td>
+          <td>${alumno.apPaterno}</td>
+          <td>${alumno.apMaterno}</td>
+          <td>${alumno.codigoEP}</td>
+          <td>
+            <button class="btn btn-primary btn-delete" data-id="${doc.id}">
+            🗑 Delete
+            </button>
+            <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
+            🖉 Edit
+            </button>
+          </td>
+        </tr>
+      </thead>
+    </table>`;
 });
 //funcionalidad boton-borrar
 const btnsDelete = alumnosContainer.querySelectorAll(".btn-delete");

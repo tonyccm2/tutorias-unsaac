@@ -17,9 +17,14 @@ body {
 	-ms-align-items: center;
 	-moz-align-items: center;
 	-webkit-align-items: center;
-	background-image: -moz-linear-gradient( 136deg, rgb(34, 44, 236) 0%, rgb(240, 118, 138) 100%);
-    background-image: -webkit-linear-gradient( 136deg, rgb(235, 133, 138) 0%, rgb(134, 141, 231) 100%);
-    background-image: -ms-linear-gradient( 136deg, rgb(47, 106, 235) 0%, rgb(206, 110, 134) 100%);
+	background: #000000;
+    color: #e7e9e9;
+    background: #f12711;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+    font-size: 19px;
+	
 }
 .form-container{
     background: #fff;
@@ -85,7 +90,7 @@ body {
 	padding-left: 60px;
 	padding-right: 50px;
 }
-.form-container .form-details .form-left .form-group .form-row.form-row-1 {
+.form-container .form-details .form-left .form-group .form-row .form-row-1 {
 	display: flex;
 	display: -webkit-flex;
 	width: auto;

@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     querySnapshot.forEach((doc) => {
       const ficha = doc.data();
       // FRONT-END ?????????????  // actualizado cod y description de .html
-      fichasContainer.innerHTML += `<div class="card card-body mt-2 border-primary">
+      fichasContainer.innerHTML += `<div class="card">
     <h3 class="h5">${ficha.cod}</h3>
     <p>${ficha.description}</p>
     <div>
